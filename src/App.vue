@@ -1,30 +1,136 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+
+  // HEADER
+  data() {
+        return {
+            navItems: [
+                {
+                    text: 'Characters',
+                    url: '#',
+                    active: false,
+                },
+
+                {
+                    text: 'Comics',
+                    url: '#',
+                    active: true,
+                },
+
+                {
+                    text: 'Movies',
+                    url: '#',
+                    active: false,
+                },
+
+                {
+                    text: 'TV',
+                    url: '#',
+                    active: false,
+                },
+
+                {
+                    text: 'Games',
+                    url: '#',
+                    active: false,
+                },
+
+                {
+                    text: 'Collectibles',
+                    url: '#',
+                    active: false,
+                },
+
+                {
+                    text: 'Videos',
+                    url: '#',
+                    active: false,
+                },
+
+                {
+                    text: 'Fans',
+                    url: '#',
+                    active: false,
+                },
+
+                {
+                    text: 'News',
+                    url: '#',
+                    active: false,
+                },
+
+                {
+                    text: 'Shop',
+                    url: '#',
+                    active: false,
+                },
+            ]
+        }
+    };
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+<!-- HEADER -->
+  <header>
+        <div class="container">
+            <nav class="d-flex justify-between align-center">
+                <a class="logo-container" href="#">
+                    <img src="../../assets/img/dc-logo.png" alt="logo" title="logo">
+                </a>
+
+                <ul class="d-flex">
+                    <li class="text-uppercase d-flex" :class="(navItem.active) ? 'active' : ''"
+                        v-for="navItem in navItems">
+                        <a :href="(navItem.url)" :alt="navItem.text">{{ navItem.text }}</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+header {
+    background-color: $primary--color;
+
+    .container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    nav {
+        height: 100px;
+
+        .logo-container {
+            width: 60px;
+        }
+
+        ul {
+            height: 100%;
+
+            li {
+                margin-right: 2.3rem;
+                line-height: 100px;
+
+                &.active {
+                    border-bottom: 3px solid $complementary--color;
+
+                    a {
+                        color: $complementary--color;
+                    }
+                }
+
+                a {
+                    font-size: 0.7rem;
+                    font-weight: bold;
+                    color: $darker--icon--bg-color;
+
+                    &:hover {
+                        color: $secondary--color;
+                    }
+                }
+            }
+        }
+    }
 }
 </style>
