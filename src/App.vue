@@ -1,72 +1,60 @@
 <script setup>
+import { ref } from 'vue';
 
-  // HEADER
-  data() {
-        return {
-            navItems: [
-                {
-                    text: 'Characters',
-                    url: '#',
-                    active: false,
-                },
+// HEADER
 
-                {
-                    text: 'Comics',
-                    url: '#',
-                    active: true,
-                },
-
-                {
-                    text: 'Movies',
-                    url: '#',
-                    active: false,
-                },
-
-                {
-                    text: 'TV',
-                    url: '#',
-                    active: false,
-                },
-
-                {
-                    text: 'Games',
-                    url: '#',
-                    active: false,
-                },
-
-                {
-                    text: 'Collectibles',
-                    url: '#',
-                    active: false,
-                },
-
-                {
-                    text: 'Videos',
-                    url: '#',
-                    active: false,
-                },
-
-                {
-                    text: 'Fans',
-                    url: '#',
-                    active: false,
-                },
-
-                {
-                    text: 'News',
-                    url: '#',
-                    active: false,
-                },
-
-                {
-                    text: 'Shop',
-                    url: '#',
-                    active: false,
-                },
-            ]
-        }
-    };
-
+const navItems = ref([
+  {
+    text: 'Characters',
+    url: '#',
+    active: false,
+  },
+  {
+    text: 'Comics',
+    url: '#',
+    active: true,
+  },
+  {
+    text: 'Movies',
+    url: '#',
+    active: false,
+  },
+  {
+    text: 'TV',
+    url: '#',
+    active: false,
+  },
+  {
+    text: 'Games',
+    url: '#',
+    active: false,
+  },
+  {
+    text: 'Collectibles',
+    url: '#',
+    active: false,
+  },
+  {
+    text: 'Videos',
+    url: '#',
+    active: false,
+  },
+  {
+    text: 'Fans',
+    url: '#',
+    active: false,
+  },
+  {
+    text: 'News',
+    url: '#',
+    active: false,
+  },
+  {
+    text: 'Shop',
+    url: '#',
+    active: false,
+  },
+]);
 </script>
 
 <template>
@@ -91,7 +79,7 @@
 
 <style scoped>
 header {
-    background-color: $primary--color;
+    background-color: #yourPrimaryColor; /* Sostituisci con il tuo colore primario */
 
     .container {
         padding-top: 0;
@@ -113,20 +101,20 @@ header {
                 line-height: 100px;
 
                 &.active {
-                    border-bottom: 3px solid $complementary--color;
+                    border-bottom: 3px solid #yourComplementaryColor; /* Sostituisci con il tuo colore complementare */
 
                     a {
-                        color: $complementary--color;
+                        color: #yourComplementaryColor; /* Sostituisci con il tuo colore complementare */
                     }
                 }
 
                 a {
                     font-size: 0.7rem;
                     font-weight: bold;
-                    color: $darker--icon--bg-color;
+                    color: #yourDarkerIconBgColor; /* Sostituisci con il tuo colore per l'icona più scura */
 
                     &:hover {
-                        color: $secondary--color;
+                        color: #yourSecondaryColor; /* Sostituisci con il tuo colore secondario */
                     }
                 }
             }
