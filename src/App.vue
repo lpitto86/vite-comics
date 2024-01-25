@@ -1,6 +1,7 @@
 <script setup>
 import AppHeader from './components/AppHeader.vue'
 import AppCards from './components/AppCards.vue'
+import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import AppCards from './components/AppCards.vue'
   </main>
 
   <footer>
+    <AppFooter/>
   </footer>
 </template>
 
